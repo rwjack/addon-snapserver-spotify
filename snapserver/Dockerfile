@@ -13,12 +13,12 @@ RUN \
     && rm -fr \
         /tmp/*
 
-RUN apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community/ snapcast-server=0.29.0-r0
+RUN apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community/ snapcast-server=0.34.0-r0
 
-RUN apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/ librespot=0.4.2-r4
+RUN apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/ librespot=0.7.1-r0
 
 RUN \
-    wget https://github.com/badaix/snapweb/releases/download/v0.8.0/snapweb.zip && \
+    wget https://github.com/badaix/snapweb/releases/download/v0.9.2/snapweb.zip && \
     unzip -o snapweb.zip -d /usr/share/snapserver/snapweb/ && \
     rm snapweb.zip
 

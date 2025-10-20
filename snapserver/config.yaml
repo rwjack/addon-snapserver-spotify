@@ -1,6 +1,6 @@
 ---
 name: Snapcast Server + Librespot
-version: 2024.10.1
+version: 2025.10.0
 slug: snapcast-server-libspot
 description: Host a Snapcast server with Librespot
 url: https://github.com/rwjack/addon-snapserver-spotify
@@ -13,6 +13,7 @@ arch:
 map: ["share:rw"]
 audio: true
 init: false
+host_network: true
 options:
   server:
     threads: "-1"
@@ -26,7 +27,7 @@ options:
     volume: 100
     bypass_apresolve: false
   stream:
-    streams: "tcp://0.0.0.0:4953?name=TTS&codec=pcm&mode=server"
+    streams: "tcp://0.0.0.0:4952?name=TTS&codec=pcm&mode=server"
     buffer: 1000
     codec: "flac"
     send_to_muted: true
@@ -71,9 +72,9 @@ ports:
   1704/tcp: 1704
   1705/tcp: 1705
   1780/tcp: 1780
-  4953/tcp: 4953
+  4952/tcp: 4952
 ports_description:
   1704/tcp: Snapcast Stream
   1705/tcp: Snapcast JSON RPC
   1780/tcp: Snapcast HTTP controller
-  4953/tcp: Snapcast HA TTS listener
+  4952/tcp: Snapcast Music Assistant Listener
